@@ -31,7 +31,7 @@ function MetricChart({ metrics, selectedMetric, onSelectMetric }) {
         <select
           value={selectedMetric}
           onChange={(ev) => onSelectMetric(ev.target.value)}
-          className="border border-border-gray rounded-lg px-3 py-2 text-sm text-almost-black font-medium focus:outline-none"
+          className="border border-border-gray rounded-lg px-4 py-2 text-sm font-medium text-almost-black bg-white shadow-sm cursor-pointer focus:outline-none"
         >
           {options.map((option) => (
             <option key={option} value={option}>

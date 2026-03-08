@@ -5,12 +5,8 @@ function Sidebar() {
     <div className="w-56 h-screen bg-white border-r border-border-gray flex flex-col p-4">
       <div className="mb-8 px-2">
         <div className="flex items-center justify-between border border-border-gray rounded-lg px-3 py-2">
-          <span className="text-sm font-medium text-almost-black">
-            Factorial
-          </span>
-          <span className="text-mid-gray">
-            <i className="fa-solid fa-angle-down"></i>
-          </span>
+          <img src="/logo-factorial.svg" alt="Factorial web" className="h-7" />
+          <i className="fa-solid fa-angle-down text-mid-gray"></i>
         </div>
       </div>
       <p className="text-xs font-medium text-mid-gray uppercase tracking-widest px-2 mb-2">

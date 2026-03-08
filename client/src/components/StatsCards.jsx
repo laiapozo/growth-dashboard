@@ -23,15 +23,15 @@ function StatsCards({ metrics }) {
       {cards.map((card) => (
         <div
           key={card.label}
-          className="bg-white rounded-xl border border-border-gray p-6"
+          className="bg-white rounded-xl border border-border-gray p-5"
         >
           <div className="flex items-center gap-2 mb-2">
             <i className={`fa-solid ${card.icon} text-brand-red`}></i>
-            <span className="text-sm font-medium text-mid-gray">
+            <span className="text-xs font-medium text-mid-gray">
               {card.label}
             </span>
           </div>
-          <p className="text-3xl font-bold text-almost-black">{card.value}</p>
+          <p className="text-2xl font-bold text-almost-black">{card.value}</p>
         </div>
       ))}
     </div>
