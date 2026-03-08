@@ -8,18 +8,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function MetricChart({ metrics, selectedMetric, onSelectMetric }) {
-  const options = ["page_visits", "signups", "conversions"];
+function MetricChart({ data, selectedMetric, onSelectMetric }) {
+  const METRIC_OPTIONS = ["page_visits", "signups", "conversions"];
 
-  const data = metrics.map((metric) => ({
-    date: new Date(metric.timestamp).toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-    }),
-    value: metric.value,
-  }));
-
-  const labels = {
+  const METRIC_LABELS = {
     page_visits: "Page visits",
     signups: "Signups",
     conversions: "Conversions",
@@ -33,9 +25,9 @@ function MetricChart({ metrics, selectedMetric, onSelectMetric }) {
           onChange={(ev) => onSelectMetric(ev.target.value)}
           className="border border-border-gray rounded-lg px-4 py-2 text-sm font-medium text-almost-black bg-white shadow-sm cursor-pointer focus:outline-none"
         >
-          {options.map((option) => (
+          {METRIC_OPTIONS.map((option) => (
             <option key={option} value={option}>
-              {labels[option]}
+              {METRIC_LABELS[option]}
             </option>
           ))}
         </select>

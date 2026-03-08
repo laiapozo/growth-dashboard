@@ -1,5 +1,18 @@
 import { NavLink } from "react-router-dom";
 
+const NAV_LINKS = [
+  {
+    to: "/",
+    icon: "fa-chart-line",
+    label: "Dashboard",
+  },
+  {
+    to: "/add-metric",
+    icon: "fa-plus",
+    label: "Add metric",
+  },
+];
+
 function Sidebar() {
   return (
     <div className="w-56 h-screen bg-white border-r border-border-gray flex flex-col p-4">
@@ -13,30 +26,21 @@ function Sidebar() {
         Management
       </p>
       <nav className="flex flex-col gap-1">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-              isActive
-                ? "bg-red-50 text-brand-red"
-                : "text-mid-gray hover:bg-light-gray"
-            }`
-          }
-        >
-          <i className="fa-solid fa-chart-line"></i> Dashboard
-        </NavLink>
-        <NavLink
-          to="/add-metric"
-          className={({ isActive }) =>
-            `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-              isActive
-                ? "bg-red-50 text-brand-red"
-                : "text-mid-gray hover:bg-light-gray"
-            }`
-          }
-        >
-          <i className="fa-solid fa-plus"></i> Add metric
-        </NavLink>
+        {NAV_LINKS.map((link) => (
+          <NavLink
+            key={link.to}
+            to={link.to}
+            className={({ isActive }) =>
+              `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                isActive
+                  ? "bg-red-50 text-brand-red"
+                  : "text-mid-gray hover:bg-light-gray"
+              }`
+            }
+          >
+            <i className={`fa-solid ${link.icon}`}></i> {link.label}
+          </NavLink>
+        ))}
       </nav>
     </div>
   );

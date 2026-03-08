@@ -22,6 +22,20 @@ app.get("/api/metrics", async (req, res) => {
 app.post("/api/metrics", async (req, res) => {
   try {
     const { name, value, timestamp, created_by } = req.body;
+
+    // Check if already exists
+    const [existing] = await pool.query(
+      "SELECT id FROM metrics WHERE name = ? AND DATE(timestamp) = DATE(?)",
+      [name, timestamp],
+    );
+
+    if (existing.length > 0) {
+      return res.status(409).json({
+        error: "A metric with this name already exists for this date",
+      });
+    }
+
+    // If not, insert new metric
     await pool.query(
       "INSERT INTO metrics (name, value, timestamp, created_by) VALUES (?, ?, ?, ?)",
       [name, value, timestamp, created_by],

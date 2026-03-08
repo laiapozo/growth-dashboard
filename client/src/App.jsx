@@ -6,7 +6,7 @@ import AddMetric from "./pages/AddMetric";
 
 function App() {
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-light-gray">
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Header />

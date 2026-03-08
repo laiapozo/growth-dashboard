@@ -1,13 +1,4 @@
-function StatsCards({ metrics }) {
-  const getTotal = (name) => {
-    const filtered = metrics.filter((m) => m.name === name);
-    let total = 0;
-    for (const metric of filtered) {
-      total = total + metric.value;
-    }
-    return total;
-  };
-
+function StatsCards({ getTotal }) {
   const cards = [
     { label: "Page visits", value: getTotal("page_visits"), icon: "fa-eye" },
     { label: "Signups", value: getTotal("signups"), icon: "fa-user-plus" },
