@@ -4,3 +4,11 @@
 * {
   font-family: "Inter", sans-serif;
 }
+
+@theme {
+  --color-brand-red: #ff4757;
+  --color-almost-black: #1a1a2e;
+  --color-light-gray: #f4f5f7;
+  --color-mid-gray: #6b7280;
+  --color-border-gray: #e5e7eb;
+}
