@@ -35,6 +35,7 @@ function useMetricForm() {
     setSuccess(true);
     setTimeout(() => setSuccess(false), 3000);
   };
+
   const handleCancel = () => {
     setName("");
     setValue("");
