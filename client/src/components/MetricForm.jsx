@@ -50,6 +50,7 @@ function MetricForm() {
             type="date"
             value={date}
             onChange={(ev) => setDate(ev.target.value)}
+            max={new Date().toISOString().split("T")[0]}
             className="border border-border-gray rounded-lg px-3 py-2 text-sm text-almost-black focus:outline-none"
           />
         </div>
